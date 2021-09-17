@@ -44,7 +44,7 @@ namespace Boros_Daniel
 
     private static void HarmadikFeladat()
     {
-
+      Console.WriteLine($"3. feladat: Dolgozók száma: {adatok.Count} fő");
     }
 
     private static void MasodikFeladat()
