@@ -10,6 +10,7 @@ namespace Boros_Daniel
   class Program
   {
     static List<Adatok> adatok = new List<Adatok>();
+    static string reszlegBeker = "";
     static void Main(string[] args)
     {
       ElsoFeladat();
@@ -29,13 +30,42 @@ namespace Boros_Daniel
 
     private static void HatodikFeladat()
     {
-
+      bool van = false;
+      int max = 0;
+      int iMax = 0;
+      for (int i = 0; i < adatok.Count; i++)
+      {
+        if (reszlegBeker == adatok[i].Reszleg)
+        {
+          van = true;
+        }
+        if (adatok[i].Fizetes > max && van)
+        {
+          max = adatok[i].Fizetes;
+          iMax = i;
+        }
+      }
+        
+      
+      if (van == true)
+      {
+        Console.WriteLine($"6. feladat: A legtöbbet kereső dolgozó a megadott részlegen");
+        Console.WriteLine("\tNév:",adatok[iMax].Nev);
+        Console.WriteLine("\tNem:", adatok[iMax].Nem);
+        Console.WriteLine("\tRészleg:", adatok[iMax].Reszleg);
+        Console.WriteLine("\tBelépés:", adatok[iMax].Ev);
+        Console.WriteLine("\tBér:", adatok[iMax].Fizetes);
+      }
+      else
+      {
+        Console.WriteLine("N");
+      }
     }
 
     private static void OtodikFeladat()
     {
       Console.Write("5. feladat: Kérem egy részleg nevét: ");
-      string reszlegBeker = Console.ReadLine();
+      reszlegBeker = Console.ReadLine();
     }
 
     private static void NegyedikFeladat()
