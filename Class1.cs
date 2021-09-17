@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Boros_Daniel
 {
@@ -48,13 +49,14 @@ namespace Boros_Daniel
       set { fizetes = value; }
     }
 
-    public Adatok(string nev, string nem, string reszleg, int ev, int fizetes)
+    public Adatok(string olvas)
     {
-      this.nev = nev;
-      this.nem = nem;
-      this.reszleg = reszleg;
-      this.ev = ev;
-      this.fizetes = fizetes;
+      string[] sor = olvas.Split(';');
+      this.nev = sor[0];
+      this.nem = sor[1];
+      this.reszleg = sor[2];
+      this.ev = Convert.ToInt32(sor[3]);
+      this.fizetes = Convert.ToInt32(sor[4]);
     }
   }
-}
+  }

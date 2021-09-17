@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Boros_Daniel
 {
@@ -18,6 +19,7 @@ namespace Boros_Daniel
       OtodikFeladat();
       HatodikFeladat();
       HetedikFeladat();
+      Console.ReadKey();
     }
 
     private static void HetedikFeladat()
@@ -47,7 +49,13 @@ namespace Boros_Daniel
 
     private static void MasodikFeladat()
     {
-
+      StreamReader olvas = new StreamReader("berek2020.txt");
+      olvas.ReadLine();
+      while (!olvas.EndOfStream)
+      {
+        adatok.Add(new Adatok(olvas.ReadLine()));
+      }
+      olvas.Close();
     }
 
     private static void ElsoFeladat()
