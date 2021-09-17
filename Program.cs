@@ -34,7 +34,8 @@ namespace Boros_Daniel
 
     private static void OtodikFeladat()
     {
-
+      Console.Write("5. feladat: Kérem egy részleg nevét: ");
+      string reszlegBeker = Console.ReadLine();
     }
 
     private static void NegyedikFeladat()
