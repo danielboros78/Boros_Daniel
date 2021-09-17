@@ -39,7 +39,14 @@ namespace Boros_Daniel
 
     private static void NegyedikFeladat()
     {
-
+      double szamol = 0;
+      foreach (var a in adatok)
+      {
+        szamol += a.Fizetes;
+      }
+      szamol = szamol / adatok.Count / 1000;
+      szamol = Math.Round(szamol, 1);
+      Console.WriteLine($"4. feladat: Bérek átlaga: {szamol} eFt");
     }
 
     private static void HarmadikFeladat()
